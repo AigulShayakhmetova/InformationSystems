@@ -1,57 +1,62 @@
-package mainPackage;
+package mainPackage;/**пакет , в котором хранится папка */
 
-import javax.swing.JApplet;
+import javax.swing.JApplet;/** импортируем  */
 
-import panelsPackage.PanelsManager;
+import panelsPackage.PanelsManager;/**импортируем */
 
-public class MainAppletClass extends JApplet {
-    public PanelsManager panelsManager;
+public class MainAppletClass extends JApplet /** класс,использующийся для расширения другого класса*/
+{
+    public PanelsManager panelsManager;/** создание объекта  */
 
-    public MainAppletClass() {
-        System.out.println("MainAppletClass::MainAppletClass(); -- ");
+    public MainAppletClass() /**конструктор этого класса*/
+    {
+        System.out.println("MainAppletClass::MainAppletClass(); -- ");/**пишется , что функция вызвалась*/ 
     }
 
     @Override
-    public void init() {
-        System.out.println("MainAppletClass::init(); -- Start");
-        super.init();
-        try {
-            java.awt.EventQueue.invokeAndWait(new Runnable() {
-                public void run() {
+    public void init()/** переопределени функции*/
+    {
+        System.out.println("MainAppletClass::init(); -- Start");/** пишется, что функция вызвалась */
+        super.init();/** вызов функции*/
+        try /**для проверки */
+        {
+            java.awt.EventQueue.invokeAndWait(new Runnable()/**создание отдельного  потока*/
+                 {
+                public void run() ;
+               
+                {
                     initComponents();
                     invalidate();
                 }
             });
-        } catch (Exception ex) {
+        } catch (Exception ex) /**если что-то пошло не так ,бросается ex*/
+        {
             ex.printStackTrace();
         }
-        System.out.println("MainAppletClass::init(); -- End");
+        System.out.println("MainAppletClass::init(); -- End");/** конец функции*/
     }
 
-    public void initComponents() {
-        this.panelsManager = new PanelsManager(this, getContentPane());
-//        this.setSize(panelsManager.container.getSize());
+    public void initComponents() /** функция в другом потоке*/
+    {
+        this.panelsManager = new PanelsManager(this, getContentPane());/** динамическое создание объекта*/
+
     }
 
     @Override
-    public void start() {
+    public void start() /** создаются объекты потоков и потоки запускаются на выполнение*/
+    {
         System.out.println("MainAppletClass::start(); -- ");
     }
 
     @Override
-    public void stop() {
+    public void stop()/** остановка работающего потока*/
+    {
         System.out.println("MainAppletClass::stop(); -- ");
     }
 
     @Override
-    public void destroy() {
+    public void destroy() /**уничтожение*/
+    {
         System.out.println("MainAppletClass::destroy(); -- ");
     }
-
-//    @Override
-//    public void paint(Graphics g) {
-////       g.drawString("Hello, world!",70,50);
-//       System.out.println("MainAppletClass::paint(" + g + "); -- ");
-////       this.setSize(getContentPane().getPreferredSize());
-//    }
 }
