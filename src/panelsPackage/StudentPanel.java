@@ -45,40 +45,40 @@ public class StudentPanel extends JPanel {
         Box horizontalBox = Box.createHorizontalBox();
         verticalBox.add(horizontalBox);
 
-        JLabel label_surname = new JLabel("Фамилия");
+        JLabel label_surname = new JLabel("Фамилия");/** создание надписи "Фамилия" */
         horizontalBox.add(label_surname);
         label_surname.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
-        surname = new JTextField();
+        surname = new JTextField();/** создание поля ввода для фамилии */
         horizontalBox.add(surname);
         surname.setColumns(10);
 
         Box horizontalBox_1 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_1);
 
-        JLabel label_name = new JLabel("Имя");
+        JLabel label_name = new JLabel("Имя");/** создание надписи "Имя" */
         horizontalBox_1.add(label_name);
         label_name.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
-        name = new JTextField();
+        name = new JTextField();/** создание надписи "Имя" */
         horizontalBox_1.add(name);
         name.setColumns(10);
 
         Box horizontalBox_2 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_2);
 
-        JLabel label_patronymic = new JLabel("Отчество");
+        JLabel label_patronymic = new JLabel("Отчество");/** создание надписи "Отчество" */
         horizontalBox_2.add(label_patronymic);
         label_patronymic.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
-        patronymic = new JTextField();
+        patronymic = new JTextField();/** создание поля ввода для отчества */
         horizontalBox_2.add(patronymic);
         patronymic.setColumns(10);
 
         Box horizontalBox_3 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_3);
 
-        JLabel label_faculty = new JLabel("Факультет");
+        JLabel label_faculty = new JLabel("Факультет");/** создание надписи "Факультет" */
         horizontalBox_3.add(label_faculty);
         label_faculty.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
@@ -89,23 +89,25 @@ public class StudentPanel extends JPanel {
         Box horizontalBox_4 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_4);
 
-        JLabel label_post = new JLabel("Имя Группы");
+        JLabel label_post = new JLabel("Имя Группы");/** создание надписи "Имя Группы */
         horizontalBox_4.add(label_post);
         label_post.setFont(new Font("Tahoma", Font.PLAIN, 15));
         
-        groupName = new JTextField();
+        groupName = new JTextField();/** создание поля ввода для имени группы */
         horizontalBox_4.add(groupName);
         groupName.setColumns(10);
 
         label_err = new JLabel("");
         verticalBox.add(label_err);
 
-        btnSafeData = new JButton("Сохранить данные");
+        btnSafeData = new JButton("Сохранить данные");/** создание кнопки "Сохранить данные" */
         btnSafeData.setAlignmentX(Component.CENTER_ALIGNMENT);
-        btnSafeData.addActionListener(new ActionListener() {
+        btnSafeData.addActionListener(new ActionListener() /** при нажатии на кнопку "Сохранить данные" заносится студент*/
+       {
             public void actionPerformed(ActionEvent e) {
-                System.out.println("StudentPanel::btnSafeData::actionPerformed(); -- ");
-                if (validateEnterAllData()) {
+                System.out.println("StudentPanel::btnSafeData::actionPerformed(); -- ");/** прошло успешное добавление */
+                if (validateEnterAllData()) /** проверка на заполненность всех полей */
+                {
                     changeEditMode();
                 }
             }
@@ -113,8 +115,8 @@ public class StudentPanel extends JPanel {
         verticalBox.add(btnSafeData);
         add(verticalBox);
 
-        btnGetLectorer = new JButton("Получить дипломного руководителя");
-        btnGetLectorer.setVisible(false);
+        btnGetLectorer = new JButton("Получить дипломного руководителя");/** создание кнопки "Получить дипломного руководителя" */
+        btnGetLectorer.setVisible(false);/** кнопка не видима*/
         btnGetLectorer.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnGetLectorer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -145,17 +147,17 @@ public class StudentPanel extends JPanel {
                 public void run() {
                     label_err.setText("");
                 }
-            }, 2000);
+            }, 2000);/**через 2 секунда надпись "заполните все поля" пропадает */
             return false;
         } else {
             return true;
         }
     }
 
-    private void changeEditMode() {
+    private void changeEditMode() {/** функция для изменение данных студента */
         System.out.println("StudentPanel::changeEditMode(); -- editMode:" + editMode);
-        editMode = !editMode;
-        surname.setEnabled(editMode);
+        editMode = !editMode;/** панель в режиме редактирования */
+        surname.setEnabled(editMode);/** установка новых данных, панель не редактируется */
         name.setEnabled(editMode);
         patronymic.setEnabled(editMode);
         faculty.setEnabled(editMode);
