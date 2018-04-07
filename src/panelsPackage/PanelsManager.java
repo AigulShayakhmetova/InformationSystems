@@ -6,7 +6,8 @@ import java.awt.Container;
 import dataPackage.DataCollector;
 import mainPackage.MainAppletClass;
 
-public class PanelsManager {
+public class PanelsManager/** публичный класс*/
+{
     public DataCollector dataCollector;
     public MainAppletClass mainAppletClass;
     public Container container;
@@ -16,22 +17,25 @@ public class PanelsManager {
     public StudentPanel studentPanel;
     public InfoListPanel infoListPanel;
 
-    public PanelsManager(MainAppletClass mainAppletClass, Container container) {
-        dataCollector = new DataCollector();
+    public PanelsManager(MainAppletClass mainAppletClass, Container container)/**конструктор класса */
+    {
+        dataCollector = new DataCollector();/** создание объекта*/
 
         this.mainAppletClass = mainAppletClass;
         this.container = container;
         this.cardLayout = new CardLayout();
         this.container.setLayout(cardLayout);
-        setMainPanel();
+        setMainPanel();/**установка панели*/
     }
 
-    public void setMainPanel() {
-        if(mainPanel == null) {
-            mainPanel = new MainPanel(this);
+    public void setMainPanel() /**установка панели*/
+    {
+        if(mainPanel == null) /**если панели не было*/
+        {
+            mainPanel = new MainPanel(this);/**устанавливаем панель*/ 
         }
-        container.add(mainPanel.getName(), mainPanel);
-        cardLayout.show(container, mainPanel.getName());
+        container.add(mainPanel.getName(), mainPanel);/**заносим панель в контейнер */
+        cardLayout.show(container, mainPanel.getName());/** отображаем панеель*/
         mainAppletClass.setSize(container.getPreferredSize());
     }
 
@@ -63,12 +67,4 @@ public class PanelsManager {
         mainAppletClass.setSize(container.getPreferredSize());
     }
 
-//    public void addPanel(JPanel panel, String name) {
-//        container.add(name, panel);
-//    }
-//
-//    public void showPanel(String name) {
-//        cardLayout.show(container, name);
-////        container.set
-//    }
 }
