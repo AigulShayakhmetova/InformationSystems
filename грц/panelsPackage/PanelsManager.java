@@ -6,7 +6,7 @@ import java.awt.Container;
 import dataPackage.DataCollector;
 import mainPackage.MainAppletClass;
 
-public class PanelsManager/** публичный класс*/
+public class PanelsManager/** публичный класс */
 {
     public DataCollector dataCollector;
     public MainAppletClass mainAppletClass;
@@ -19,7 +19,7 @@ public class PanelsManager/** публичный класс*/
 
     public PanelsManager(MainAppletClass mainAppletClass, Container container)/**конструктор класса */
     {
-        dataCollector = new DataCollector();/** создание объекта*/
+        dataCollector = new DataCollector();/** создание объекта */
 
         this.mainAppletClass = mainAppletClass;
         this.container = container;
@@ -30,12 +30,12 @@ public class PanelsManager/** публичный класс*/
 
     public void setMainPanel() /**установка панели*/
     {
-        if(mainPanel == null) /**если панели не было*/
+        if(mainPanel == null) /**если панели не было */
         {
-            mainPanel = new MainPanel(this);/**устанавливаем панель*/ 
+            mainPanel = new MainPanel(this);/**устанавливаем панель */ 
         }
         container.add(mainPanel.getName(), mainPanel);/**заносим панель в контейнер */
-        cardLayout.show(container, mainPanel.getName());/** отображаем панеель*/
+        cardLayout.show(container, mainPanel.getName());/** отображаем панель */
         mainAppletClass.setSize(container.getPreferredSize());
     }
 
