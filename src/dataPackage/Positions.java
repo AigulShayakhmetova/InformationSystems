@@ -1,6 +1,7 @@
 package dataPackage;
 
-public enum Positions {
+public enum Positions /** выбор должности */
+{
     NONE("Не выбрано"),
     LECTURER("Преподаватель"),
     SENIOR_LECTURER("Старший преподователь"),
@@ -17,12 +18,14 @@ public enum Positions {
         }
     }
 
-    Positions(final String text) {
+    Positions(final String text) /** установка текста */
+    {
         this.text = text;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return text;
     }
 
