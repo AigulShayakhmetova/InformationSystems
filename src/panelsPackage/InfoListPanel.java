@@ -35,10 +35,10 @@ public class InfoListPanel extends JPanel {
         setName(this.getClass().getName());
 
         FlowLayout flowLayout = new FlowLayout(FlowLayout.CENTER, 5, 5);
-        setLayout(flowLayout);
+        setLayout(flowLayout);/**Установка режима FlowLayout выполняется при помощи метода setLayout*/
 
-        Box verticalBox_2 = Box.createVerticalBox();
-        add(verticalBox_2);
+        Box verticalBox_2 = Box.createVerticalBox();/** создается новый компонент*/
+        add(verticalBox_2);/**добавляется компонент на панель */
 
         Box horizontalBox = Box.createHorizontalBox();
         verticalBox_2.add(horizontalBox);
@@ -46,12 +46,12 @@ public class InfoListPanel extends JPanel {
         Box verticalBox = Box.createVerticalBox();
         horizontalBox.add(verticalBox);
 
-        JLabel lblNewLabel = new JLabel("Преподаватель");
+        JLabel lblNewLabel = new JLabel("Преподаватель");/**Создаём надпись "Преподаватель"*/
         lblNewLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        verticalBox.add(lblNewLabel);
+        verticalBox.add(lblNewLabel);/** надпись добавляется в компонент verticalBox*/
 
         defaultListModelLecturers = new DefaultListModel();
-        JList lecturersList = new JList();
+        JList lecturersList = new JList();/**Создание списка JList преподавателей */
         lecturersList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         lecturersList.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent arg0) {
@@ -73,16 +73,16 @@ public class InfoListPanel extends JPanel {
         Box verticalBox_1 = Box.createVerticalBox();
         horizontalBox.add(verticalBox_1);
 
-        JLabel lblNewLabel_1 = new JLabel("Студент");
+        JLabel lblNewLabel_1 = new JLabel("Студент");/**Создаём надпись "Студент"*/
         lblNewLabel_1.setAlignmentX(Component.CENTER_ALIGNMENT);
         verticalBox_1.add(lblNewLabel_1);
 
         defaultListModelStudents = new DefaultListModel();
-        studentsList = new JList();
+        studentsList = new JList();/**Создание списка JList студентов */
         studentsList.setModel(defaultListModelStudents);
         verticalBox_1.add(studentsList);
 
-        JButton btnBack = new JButton("Назад");
+        JButton btnBack = new JButton("Назад");/**Создаём кнопку "Назад"*/
         btnBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
                 panelsManager.setMainPanel();
@@ -91,10 +91,11 @@ public class InfoListPanel extends JPanel {
         btnBack.setAlignmentX(Component.CENTER_ALIGNMENT);
         verticalBox_2.add(btnBack);
         System.out.println("InfoListPanel::InfoListPanel(); -- dataCollector:" + dataCollector);
-//        updateInfoList();
+
     }
 
-    public void updateInfoList() {
+    public void updateInfoList() /**Метод для обновления списка преподавателей*/
+    {
         System.out.println("InfoListPanel::updateInfoList(); -- dataCollector:" + dataCollector);
         defaultListModelLecturers.removeAllElements();
         for (Lecturer lecturer : dataCollector.lecturers) {
