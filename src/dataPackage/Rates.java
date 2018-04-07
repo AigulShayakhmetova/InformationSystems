@@ -1,13 +1,14 @@
 package dataPackage;
 
-public enum Rates {
+public enum Rates /** выбор ставки */
+{
     NONE("Не выбрано"),
     THIRD_PART("0.3"),
     HALF_PART("0.5"),
     FULL_PART("1");
 
     private final String text;
-    private static final String[] array;
+    /**private static final String[] array;
 
     static {
         array = new String[Rates.values().length];
@@ -15,8 +16,9 @@ public enum Rates {
             array[value.ordinal()] = value.toString();
         }
     }
-
-    Rates(final String text) {
+*/
+    Rates(final String text) /** установка текста */
+    {
         this.text = text;
     }
 
@@ -25,7 +27,7 @@ public enum Rates {
         return text;
     }
 
-    public static String[] toArray() {
+ /**   public static String[] toArray() {
         return array;
-    }
+    }*/
 }
