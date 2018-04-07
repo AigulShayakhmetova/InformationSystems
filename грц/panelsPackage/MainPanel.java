@@ -13,8 +13,8 @@ public class MainPanel extends JPanel {
         System.out.println("MainPanel::MainPanel(); -- this.getClass().getName():" + this.getClass().getName());/**вывод объекта через его имя*/
         setName(this.getClass().getName());
 
-        JButton lectureButton = new JButton("Преподаватель");/** создание кнопки "Прнеподаватель" */
-        lectureButton.addActionListener(new ActionListener()   /** добавление прподавателя*/
+        JButton lectureButton = new JButton("Преподаватель");/** создание кнопки "Преподаватель" */
+        lectureButton.addActionListener(new ActionListener()   /** добавление преподавателя*/
                                         {
             public void actionPerformed(ActionEvent arg0)  
             {
