@@ -13,7 +13,8 @@ public class Lecturer implements Serializable {
     public int maxStudens;
     public ArrayList<Student> students;
 
-    public Lecturer(String surname, String name, String patronymic, String cathedra, Positions position, Rates rate) {
+    public Lecturer(String surname, String name, String patronymic, String cathedra, Positions position, Rates rate) /** установка информации о преподавателе */
+    {
         this.surname = surname;
         this.name = name;
         this.patronymic = patronymic;
@@ -21,29 +22,35 @@ public class Lecturer implements Serializable {
         this.position = position;
         this.rate = rate;
         float fRate = Float.parseFloat(rate.toString());
-        if(position.equals(Positions.PROFESSOR)) {
+        if(position.equals(Positions.PROFESSOR)) /** рассчет количества студентов для профессора */
+        {
             maxStudens = (int)(8*fRate);
-        } else if(position.equals(Positions.DOCENT)) {
+        } else if(position.equals(Positions.DOCENT)) /** расчет количества студентов для доцента */
+        {
             maxStudens = (int)(6*fRate);
-        } else if(position.equals(Positions.SENIOR_LECTURER)) {
+        } else if(position.equals(Positions.SENIOR_LECTURER)) /** расчет количества студентов для старшего преподавателя */
+        {
             maxStudens = (int)(4*fRate);
-        } else if(position.equals(Positions.LECTURER)) {
+        } else if(position.equals(Positions.LECTURER)) /** расчет количества студентов для преподавателя */
+        {
             maxStudens = (int)(2*fRate);
         }
-        students = new ArrayList<Student>(maxStudens);
+        students = new ArrayList<Student>(maxStudens); /** список максимального количества студентов */
         System.out.println("Lecturer::Lecturer(); -- fRate:" + fRate + " maxStudens:" + maxStudens);
     }
 
-    public String getFIO() {
-        StringBuilder stringBuilder = new StringBuilder();
+    public String getFIO() /**для возврата студенту своего дипломного руководителя */
+    {
+        StringBuilder stringBuilder = new StringBuilder(); /** создание строки для информации о преподавателе */
         stringBuilder.append(surname);
         stringBuilder.append(" " + name);
         stringBuilder.append(" " + patronymic);
         return stringBuilder.toString();
     }
 
-    public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
+    public String toString() /** для отображения в списке */
+    {
+        StringBuilder stringBuilder = new StringBuilder();/** создание строки для информации о преподавателе */
         stringBuilder.append("Lecturer:[");
         stringBuilder.append("surname:" + surname);
         stringBuilder.append(", " + "name:" + name);
