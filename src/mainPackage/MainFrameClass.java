@@ -1,17 +1,19 @@
-package mainPackage;
+package mainPackage;/** пакет ,в котором содержится папка  */
 
-import javax.swing.JApplet;
-import javax.swing.JFrame;
+import javax.swing.JApplet;/** класс, который используется */
+import javax.swing.JFrame;/** класс,который используется */
 
-public class MainFrameClass {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();
-        JApplet app = new MainAppletClass();
-        frame.getContentPane().add(app);
-        frame.setSize(400, 400);
-        app.init();
+public class MainFrameClass /** публичный класс*/
+{
+    public static void main(String[] args) /** функция,принимающая массив аргументов*/
+    {
+        JFrame frame = new JFrame();/** создание объекта класса*/
+        JApplet app = new MainAppletClass();/** создание объекта класса*/
+        frame.getContentPane().add(app);/** передаем компонент в контейнер*/
+        frame.setSize(400, 400);/** размер*/
+        app.init();/** инициализация*/
         app.start();
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
+        frame.setVisible(true);/** видимость */
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);/**операция для закрытия формы*/
     }
 }
