@@ -8,15 +8,7 @@ public enum Rates /** выбор ставки */
     FULL_PART("1");
 
     private final String text;
-    /**private static final String[] array;
-
-    static {
-        array = new String[Rates.values().length];
-        for(Rates value : Rates.values()) {
-            array[value.ordinal()] = value.toString();
-        }
-    }
-*/
+    
     Rates(final String text) /** установка текста */
     {
         this.text = text;
@@ -26,8 +18,4 @@ public enum Rates /** выбор ставки */
     public String toString() {
         return text;
     }
-
- /**   public static String[] toArray() {
-        return array;
-    }*/
 }
