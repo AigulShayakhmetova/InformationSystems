@@ -125,9 +125,11 @@ public class StudentPanel extends JPanel {
                         faculty.getText(), groupName.getText());
                 Lecturer lecturer = dataCollector.addStudent(newStudent);
                 if(lecturer != null) {
-                    JOptionPane.showMessageDialog(null, "Ваш дипломный руководитель:" + lecturer.getFIO() + " информация о нем: " + lecturer.cathedra, "???Warning???", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Ваш дипломный руководитель:" + lecturer.getFIO() + " информация о нем: "
+        + lecturer.cathedra, "???Warning???", JOptionPane.INFORMATION_MESSAGE);
                 } else {
-                    JOptionPane.showMessageDialog(null, "Дипломный руководитель не назначен", "???Warning2???", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Дипломный руководитель не назначен", "???Warning2???", 
+        JOptionPane.INFORMATION_MESSAGE);
                 }
                 System.out.println("StudentPanel::btnGetLectorer::actionPerformed(); -- newStudent:" + newStudent);
                 panelsManager.setInfoListPanel();
