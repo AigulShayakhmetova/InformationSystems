@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class DataCollector implements Serializable /** сериализация объектов класса (создание клона) */
 {
     public ArrayList<Lecturer> lecturers;/** массив преподавателей */
-    public ArrayList<Student> freeStudents; /** массив свободны студентов */ 
+    public ArrayList<Student> freeStudents; /** массив свободных студентов */ 
     private String dataCollectorFileName = "dataCollector";
 
     public DataCollector() /** конструктор */
@@ -26,7 +26,7 @@ public class DataCollector implements Serializable /** сериализация 
             if(dataCollector != null) /** файл не пустой */ 
             {
                 lecturers.addAll(dataCollector.lecturers); /** добавляем (восстанавливаем )  преподавателя  */
-                freeStudents.addAll(dataCollector.freeStudents); /** добавляем (востанавливаем ) студента  */
+                freeStudents.addAll(dataCollector.freeStudents); /** добавляем (восстанавливаем ) студента  */
             }
         }
         System.out.println("DataCollector::DataCollector(); -- lecturers.size():" + lecturers.size());
@@ -35,7 +35,7 @@ public class DataCollector implements Serializable /** сериализация 
         }
     }
 
-    public void addLecturer(Lecturer newLecturer) /** добавление преподвателя */
+    public void addLecturer(Lecturer newLecturer) /** добавление преподавателя */
     {
         lecturers.add(newLecturer);
         serializeToFile();
@@ -86,7 +86,7 @@ public class DataCollector implements Serializable /** сериализация 
             fis.close();
             System.out.println("DataCollector::deSerializeFromFile(); -- Good!"); /** десериализация прошла успешно */
             for(Lecturer lecturer : dataCollector.lecturers) {
-                System.out.println("DataCollector::deSerializeFromFile(); -- lecturer:" + lecturer); /** вывод обавленного ранее преподавателя с параметрами */
+                System.out.println("DataCollector::deSerializeFromFile(); -- lecturer:" + lecturer); /** вывод добавленного ранее преподавателя с параметрами */
             }
             return dataCollector;
         } catch (IOException ioe) {
