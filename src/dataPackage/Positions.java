@@ -9,15 +9,7 @@ public enum Positions /** выбор должности */
     PROFESSOR("Профессор");
 
     private final String text;
-    /**private static final String[] array;
-
-    static {
-        array = new String[Positions.values().length];
-        for(Positions value : Positions.values()) {
-            array[value.ordinal()] = value.toString();
-        }
-    }
-*/
+    
     Positions(final String text) /** установка текста */
     {
         this.text = text;
@@ -29,8 +21,4 @@ public enum Positions /** выбор должности */
         return text;
     }
 
-  /**  public static String[] toArray() {
-        return array;
-    }
-    */
 }
