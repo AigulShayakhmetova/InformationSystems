@@ -37,8 +37,8 @@ public class InfoListPanel extends JPanel {
         FlowLayout flowLayout = new FlowLayout(FlowLayout.CENTER, 5, 5);
         setLayout(flowLayout);/**Установка режима FlowLayout выполняется при помощи метода setLayout*/
 
-        Box verticalBox_2 = Box.createVerticalBox();/** создается новый компонент*/
-        add(verticalBox_2);/**добавляется компонент на панель */
+        Box verticalBox_2 = Box.createVerticalBox();
+        add(verticalBox_2);
 
         Box horizontalBox = Box.createHorizontalBox();
         verticalBox_2.add(horizontalBox);
