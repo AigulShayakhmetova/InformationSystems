@@ -48,7 +48,7 @@ public class LecturerPanel extends JPanel {
         Box horizontalBox = Box.createHorizontalBox();
         verticalBox.add(horizontalBox);
 
-        JLabel label_surname = new JLabel("Фамилия"); /** создание подписи "Фамилия" */
+        JLabel label_surname = new JLabel("Фамилия"); /** создание надписи "Фамилия" */
         horizontalBox.add(label_surname);
         label_surname.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
@@ -59,7 +59,7 @@ public class LecturerPanel extends JPanel {
         Box horizontalBox_1 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_1);
 
-        JLabel label_name = new JLabel("Имя");/** создание подписи "Имя" */
+        JLabel label_name = new JLabel("Имя");/** создание надписи "Имя" */
         horizontalBox_1.add(label_name);
         label_name.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
@@ -70,7 +70,7 @@ public class LecturerPanel extends JPanel {
         Box horizontalBox_2 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_2);
 
-        JLabel label_patronymic = new JLabel("Отчество");/** создание подписи "Отчество" */
+        JLabel label_patronymic = new JLabel("Отчество");/** создание надписи "Отчество" */
         horizontalBox_2.add(label_patronymic);
         label_patronymic.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
@@ -81,7 +81,7 @@ public class LecturerPanel extends JPanel {
         Box horizontalBox_3 = Box.createHorizontalBox();
         verticalBox.add(horizontalBox_3);
 
-        JLabel label_cathedra = new JLabel("Кафедра");/** создание подписи "Кафедра" */
+        JLabel label_cathedra = new JLabel("Кафедра");/** создание надписи "Кафедра" */
         horizontalBox_3.add(label_cathedra);
         label_cathedra.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
@@ -117,7 +117,7 @@ public class LecturerPanel extends JPanel {
 
         btnSafeData = new JButton("Сохранить данные"); /** создание кнопки "Сохранить данные" */
         btnSafeData.setAlignmentX(Component.CENTER_ALIGNMENT);
-        btnSafeData.addActionListener(new ActionListener() /** при нажатии на кнопку "Сохранить данные" заносится приподаватель*/
+        btnSafeData.addActionListener(new ActionListener() /** при нажатии на кнопку "Сохранить данные" заносится преподаватель*/
                                       {
             public void actionPerformed(ActionEvent e) 
             {
@@ -132,7 +132,7 @@ public class LecturerPanel extends JPanel {
         add(verticalBox);
 
         btnGetListStudents = new JButton("Получить список дипломников"); /** создание кнопки "Получить список дипломников" */
-        btnGetListStudents.setVisible(false); /** кнопка не видима*/
+        btnGetListStudents.setVisible(false); /** кнопка невидима*/
         btnGetListStudents.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnGetListStudents.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -158,14 +158,14 @@ public class LecturerPanel extends JPanel {
                 public void run() {
                     label_err.setText("");
                 }
-            }, 2000);/** через 2 секунда тест "заполните все поля" пропадает */
+            }, 2000);/** через 2 секунда надпись "заполните все поля" пропадает */
             return false;
         } else {
             return true;
         }
     }
 
-    private void changeEditMode() /** функция для изменение данных преподавателя */
+    private void changeEditMode() /** функция для изменения данных преподавателя */
     {
         System.out.println("LecturerPanel::changeEditMode(); -- editMode:" + editMode);
         editMode = !editMode; /** панель в режиме редактирования */
