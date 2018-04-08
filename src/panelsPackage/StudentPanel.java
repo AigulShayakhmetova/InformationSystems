@@ -82,7 +82,7 @@ public class StudentPanel extends JPanel {
         horizontalBox_3.add(label_faculty);
         label_faculty.setFont(new Font("Tahoma", Font.PLAIN, 15));
 
-        faculty = new JTextField();
+        faculty = new JTextField();/** создание поля ввода для факультета*/
         horizontalBox_3.add(faculty);
         faculty.setColumns(10);
 
@@ -116,7 +116,7 @@ public class StudentPanel extends JPanel {
         add(verticalBox);
 
         btnGetLectorer = new JButton("Получить дипломного руководителя");/** создание кнопки "Получить дипломного руководителя" */
-        btnGetLectorer.setVisible(false);/** кнопка не видима*/
+        btnGetLectorer.setVisible(false);/** кнопка невидима*/
         btnGetLectorer.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnGetLectorer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -154,7 +154,7 @@ public class StudentPanel extends JPanel {
         }
     }
 
-    private void changeEditMode() {/** функция для изменение данных студента */
+    private void changeEditMode() {/** функция для изменения данных студента */
         System.out.println("StudentPanel::changeEditMode(); -- editMode:" + editMode);
         editMode = !editMode;/** панель в режиме редактирования */
         surname.setEnabled(editMode);/** установка новых данных, панель не редактируется */
