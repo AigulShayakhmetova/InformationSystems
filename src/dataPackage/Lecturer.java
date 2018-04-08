@@ -13,7 +13,8 @@ public class Lecturer implements Serializable {
     public int maxStudens;
     public ArrayList<Student> students;
 
-    public Lecturer(String surname, String name, String patronymic, String cathedra, Positions position, Rates rate) /** установка информации о преподавателе */
+    public Lecturer(String surname, String name, String patronymic, String cathedra, Positions position, Rates rate) /** установка 
+    информации о преподавателе */
     {
         this.surname = surname;
         this.name = name;
@@ -22,7 +23,7 @@ public class Lecturer implements Serializable {
         this.position = position;
         this.rate = rate;
         float fRate = Float.parseFloat(rate.toString());
-        if(position.equals(Positions.PROFESSOR)) /** рассчет количества студентов для профессора */
+        if(position.equals(Positions.PROFESSOR)) /** расчет количества студентов для профессора */
         {
             maxStudens = (int)(8*fRate);
         } else if(position.equals(Positions.DOCENT)) /** расчет количества студентов для доцента */
