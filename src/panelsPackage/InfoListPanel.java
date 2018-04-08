@@ -63,7 +63,8 @@ public class InfoListPanel extends JPanel {
                     for(Student student : lecturer.students) {
                         defaultListModelStudents.addElement(student.getFIO());
                     }
-                    System.out.println("InfoListPanel::lecturersList::valueChanged(); -- defaultListModelStudents" + defaultListModelStudents);
+                    System.out.println("InfoListPanel::lecturersList::valueChanged(); -- defaultListModelStudents" +
+        defaultListModelStudents);
                 }
             }
         });
