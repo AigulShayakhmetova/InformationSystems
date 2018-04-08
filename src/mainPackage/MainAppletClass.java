@@ -1,4 +1,4 @@
-package mainPackage;/**пакет , в котором хранится папка */
+package mainPackage;
 
 import javax.swing.JApplet;/** импортируем  */
 
