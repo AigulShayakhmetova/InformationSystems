@@ -1,4 +1,4 @@
-package mainPackage;/** пакет ,в котором содержится папка  */
+package mainPackage;
 
 import javax.swing.JApplet;/** класс, который используется */
 import javax.swing.JFrame;/** класс,который используется */
