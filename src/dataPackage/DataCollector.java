@@ -86,7 +86,8 @@ public class DataCollector implements Serializable /** сериализация 
             fis.close();
             System.out.println("DataCollector::deSerializeFromFile(); -- Good!"); /** десериализация прошла успешно */
             for(Lecturer lecturer : dataCollector.lecturers) {
-                System.out.println("DataCollector::deSerializeFromFile(); -- lecturer:" + lecturer); /** вывод добавленного ранее преподавателя с параметрами */
+                System.out.println("DataCollector::deSerializeFromFile(); -- lecturer:" + lecturer); /** вывод добавленного ранее
+                преподавателя с параметрами */
             }
             return dataCollector;
         } catch (IOException ioe) {
