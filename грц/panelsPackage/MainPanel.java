@@ -10,7 +10,8 @@ import java.awt.event.ActionEvent;
 public class MainPanel extends JPanel {
     public MainPanel(PanelsManager panelsManager) /** конструктор */
     {
-        System.out.println("MainPanel::MainPanel(); -- this.getClass().getName():" + this.getClass().getName());/**вывод объекта через его имя*/
+        System.out.println("MainPanel::MainPanel(); -- this.getClass().getName():" + this.getClass().getName());/**вывод объекта 
+        через его имя*/
         setName(this.getClass().getName());
 
         JButton lectureButton = new JButton("Преподаватель");/** создание кнопки "Преподаватель" */
@@ -25,7 +26,7 @@ public class MainPanel extends JPanel {
         studentButton.addActionListener(new ActionListener() /** добавление студента */
                                         {
             public void actionPerformed(ActionEvent arg0) {
-                panelsManager.setStudentPanel();/** установка панели "Стидент" */
+                panelsManager.setStudentPanel();/** установка панели "Студент" */
             }
         });
         setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
